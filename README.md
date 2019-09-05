@@ -1,6 +1,7 @@
 ##论坛
 
 ##idea快捷键使用
+
 ctrl+p ：弹出参数提示，知道需要填写什么参数
 
 ctrl+shift+A:弹出搜索框，搜索terminal窗口
@@ -8,6 +9,7 @@ ctrl+shift+A:弹出搜索框，搜索terminal窗口
 ctrl+shift+N:弹出.gitignore文件
 
 ##git基本命令
+
 git status
 
 git add .
