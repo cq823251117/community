@@ -8,6 +8,8 @@ ctrl+shift+A:弹出搜索框，搜索terminal窗口
 
 ctrl+shift+N:弹出.gitignore文件
 
+shift+f6 :重命名
+
 ##git基本命令
 
 git status
