@@ -6,9 +6,23 @@ ctrl+p ：弹出参数提示，知道需要填写什么参数
 
 ctrl+shift+A:弹出搜索框，搜索terminal窗口
 
-ctrl+shift+N:弹出.gitignore文件
+ctrl+shift+N:快速搜索文件（如index.html）
+
+ctrl+shift+f12:快速全屏当前页面
 
 shift+f6 :重命名
+
+alt+enter:将鼠标放在调用方法的后面使用这个快捷键组合可以快速导入包
+
+ctrl+alt+v:将括号里的对象创建成一个变量
+AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
+githubProvider.getAccessToken(accessTokenDTO);
+
+shift+enter:快速换行，比如在上一行的行中，使用此快捷键后直接来到下一个空行行头
+
+在浏览器中ctrl+shift+n打开一个新的匿名窗口
+
+ctrl+E： 切换最近的界面
 
 ##git基本命令
 
