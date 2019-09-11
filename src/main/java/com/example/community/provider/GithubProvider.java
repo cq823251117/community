@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+
 @Component
 public class GithubProvider {
+    //携带code到github返回token
     public String getAccessToken(AccessTokenDTO accessTokenDTO){
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
 
@@ -31,6 +33,7 @@ public class GithubProvider {
         return null;
     }
 
+    //携带token从github中获取用户信息
     public GithubUser getUser(String accessToken){
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()

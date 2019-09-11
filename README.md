@@ -26,6 +26,8 @@ ctrl+E： 切换最近的界面
 
 ctrl+d: 拷贝一行
 
+ctrl+alt +L :快捷整理代码
+
 ##git基本命令
 
 git status

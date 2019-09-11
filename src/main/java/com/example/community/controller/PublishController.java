@@ -23,10 +23,13 @@ public class PublishController {
     @Autowired
     private UserMapper userMapper;
 
+    //当从主界面进入点击发布按钮或者直接在导航栏中输入/publish的时候调用合格方法
     @GetMapping("/publish")
     public String publish(){
         return "publish";
     }
+
+    //在发布界面填完发布内容时，点击界面下方的发布按钮时调用的方法
     @PostMapping("/publish")
     public String doPublish(
             @RequestParam(value = "title",required = false) String title,
