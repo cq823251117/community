@@ -1,7 +1,6 @@
 package com.example.community.controller;
 
 import com.example.community.dto.PaginationDTO;
-import com.example.community.dto.QuestionDTO;
 import com.example.community.mapper.UserMapper;
 import com.example.community.service.QuestionService;
 import com.example.community.model.User;
@@ -29,7 +28,7 @@ public class IndexController {
     public String index(HttpServletRequest request,
                         Model model,
                         @RequestParam(value = "page",defaultValue = "1") Integer page,
-                        @RequestParam(value = "size",defaultValue = "2") Integer size){
+                        @RequestParam(value = "size",defaultValue = "5") Integer size){
         Cookie[] cookies=request.getCookies();
         //通过cookie判断用户是否登录，存在用户数据则直接登录
         if (cookies!= null&&cookies.length!=0) {
