@@ -28,6 +28,10 @@ ctrl+d: 拷贝一行
 
 ctrl+alt +L :快捷整理代码
 
+ctrl+W:html选中一个代码块
+
+ctrl+alt+O:删除多余的依赖
+
 ##git基本命令
 
 git status
