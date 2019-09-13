@@ -20,9 +20,6 @@ public class PublishController {
     @Autowired
     private QuestionMapper questionMapper;
 
-    @Autowired
-    private UserMapper userMapper;
-
     //当从主界面进入点击发布按钮或者直接在导航栏中输入/publish的时候调用合格方法
     @GetMapping("/publish")
     public String publish(){
@@ -58,20 +55,7 @@ public class PublishController {
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);
 
-        User user = null;
-        Cookie[] cookies=request.getCookies();
-        if (cookies!= null&&cookies.length!=0) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String token = cookie.getValue();
-                    user = userMapper.finByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-            }
-        }
+        User user=(User)request.getSession().getAttribute("user");
         if(user == null){
             model.addAttribute("error","用户未登录");
             return "publish";

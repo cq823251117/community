@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class  QuestionService{
+public class QuestionService {
 
     @Autowired
     private QuestionMapper questionMapper;
@@ -26,8 +26,6 @@ public class  QuestionService{
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
         Integer totalCount = questionMapper.count();
-
-
         //计算总页数
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
@@ -41,15 +39,17 @@ public class  QuestionService{
         if (page > totalPage) {
             page = totalPage;
         }
-        paginationDTO.setPagination(totalPage,page);
-        Integer offset = size*(page-1);
-        List<Question> questions = questionMapper.list(offset,size);
-        List<QuestionDTO> questionDTOList=new ArrayList<>();
 
-        for (Question question: questions){
-            User user=userMapper.finById(question.getCreator());
-            QuestionDTO questionDTO=new QuestionDTO();
-            BeanUtils.copyProperties(question,questionDTO);
+        paginationDTO.setPagination(totalPage, page);
+
+        Integer offset = size * (page - 1);
+        List<Question> questions = questionMapper.list(offset, size);
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+
+        for (Question question : questions) {
+            User user = userMapper.finById(question.getCreator());
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(question, questionDTO);
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
@@ -63,8 +63,6 @@ public class  QuestionService{
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
         Integer totalCount = questionMapper.countByUserId(userId);
-
-
         //计算总页数
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
@@ -79,7 +77,7 @@ public class  QuestionService{
             page = totalPage;
         }
 
-        paginationDTO.setPagination(totalPage,page);
+        paginationDTO.setPagination(totalPage, page);
 
         Integer offset = size * (page - 1);
         List<Question> questions = questionMapper.listByUserId(userId, offset, size);

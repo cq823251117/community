@@ -32,6 +32,10 @@ ctrl+W:html选中一个代码块
 
 ctrl+alt+O:删除多余的依赖
 
+ctrl+F12:快速参看类中的所有方法名方法
+
+ctrl+alt+左方向：回退到浏览的上一个页面，ctrl+alt+右方向：反之
+
 ##git基本命令
 
 git status
