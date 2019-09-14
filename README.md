@@ -36,6 +36,8 @@ ctrl+F12:快速参看类中的所有方法名方法
 
 ctrl+alt+左方向：回退到浏览的上一个页面，ctrl+alt+右方向：反之
 
+ctrl+shift+上下键：将当前行上移或者下移一行
+
 ##git基本命令
 
 git status
