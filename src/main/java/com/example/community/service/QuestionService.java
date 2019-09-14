@@ -43,6 +43,10 @@ public class QuestionService {
         paginationDTO.setPagination(totalPage, page);
 
         Integer offset = size * (page - 1);
+        //这是自己家的判断，不加的话，当数据库中没有数据的时候，offset=-5就会报错
+        if(offset<0){
+            offset=0;
+        }
         List<Question> questions = questionMapper.list(offset, size);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
