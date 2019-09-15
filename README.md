@@ -38,6 +38,8 @@ ctrl+alt+左方向：回退到浏览的上一个页面，ctrl+alt+右方向：�
 
 ctrl+shift+上下键：将当前行上移或者下移一行
 
+ctrl+shift+F:通过页面的报错信息去找到定义这个默认报错信息的类
+
 ##git基本命令
 
 git status
