@@ -18,4 +18,10 @@
     view_count = VIEW_COUNT+#{viewCount,jdbcType=INTEGER}
     where id=#{id}
   </update>
+  <update id="invCommentCount" parameterType="com.example.community.model.Question">
+    update question
+    set
+    comment_count = COMMENT_COUNT+#{commentCount,jdbcType=INTEGER}
+    where id=#{id}
+  </update>
 </mapper>
