@@ -43,6 +43,8 @@ ctrl+shift+F:通过页面的报错信息去找到定义这个默认报错信息�
 ctrl+F6:调节参数位置,和参数类型
 
 ctrl+shift+U: 转换大小写
+
+ctrl+/:在html页面中使用这个快捷键快速创建注释
 ##git基本命令
 
 git status
