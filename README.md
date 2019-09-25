@@ -18,6 +18,8 @@ ctrl+alt+v:将括号里的对象创建成一个变量
 AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
 githubProvider.getAccessToken(accessTokenDTO);
 
+ctrl+enter+p:类似于上面的方法不过抽出的是一个参数
+
 shift+enter:快速换行，比如在上一行的行中，使用此快捷键后直接来到下一个空行行头
 
 在浏览器中ctrl+shift+n打开一个新的匿名窗口
