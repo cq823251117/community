@@ -1,7 +1,5 @@
 package com.example.community.enums;
 
-import com.example.community.model.Comment;
-
 public enum CommentTypeEnum {
     QUESTION(1),
     COMMENT(2);

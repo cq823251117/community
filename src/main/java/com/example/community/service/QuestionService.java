@@ -10,13 +10,16 @@ import com.example.community.mapper.UserMapper;
 import com.example.community.model.Question;
 import com.example.community.model.QuestionExample;
 import com.example.community.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QuestionService {
@@ -51,11 +54,13 @@ public class QuestionService {
         paginationDTO.setPagination(totalPage, page);
 
         Integer offset = size * (page - 1);
-        //这是自己家的判断，不加的话，当数据库中没有数据的时候，offset=-5就会报错
+        //这是自己加的判断，不加的话，当数据库中没有数据的时候，offset=-5就会报错
         if(offset<0){
             offset=0;
         }
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(new QuestionExample(), new RowBounds(offset, size));
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
         for (Question question : questions) {
@@ -155,5 +160,20 @@ public class QuestionService {
         question.setId(id);
         question.setViewCount(1);
         questionExtMapper.incView(question);
+    }
+//    用于查询出相关问题的内容
+    public List<QuestionDTO> selectRelated(QuestionDTO queryDto) {
+        String[] tags= StringUtils.split(queryDto.getTag(),"，");
+        String regexpTag = Arrays.stream(tags).collect(Collectors.joining("|"));
+        Question question = new Question();
+        question.setId(queryDto.getId());
+        question.setTag(regexpTag);
+        List<Question> questions = questionExtMapper.selectRelated(question);
+        List<QuestionDTO> questionDTOS = questions.stream().map(q -> {
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(q,questionDTO);
+            return questionDTO;
+        }).collect(Collectors.toList());
+        return questionDTOS;
     }
 }

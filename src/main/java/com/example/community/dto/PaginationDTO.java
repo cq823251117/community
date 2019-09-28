@@ -1,6 +1,5 @@
 package com.example.community.dto;
 
-import com.example.community.model.Question;
 import lombok.Data;
 
 import java.util.ArrayList;
