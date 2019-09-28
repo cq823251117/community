@@ -116,3 +116,21 @@ function collapseComments(e) {
         }
     }
 }
+
+//标签导航的显示与隐藏
+function showSelectTag() {
+    $("#select-tag").show();
+}
+
+//点击标签自动写入标签框
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");
+    var previous = $("#tag").val();
+    if (previous.indexOf(value) == -1) {
+        if (previous) {
+            $("#tag").val(previous + ',' + value);
+        } else {
+            $("#tag").val(value);
+        }
+    }
+}
