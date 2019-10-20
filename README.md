@@ -47,9 +47,13 @@ ctrl+F6:调节参数位置,和参数类型
 ctrl+shift+U: 转换大小写
 
 ctrl+/:在html页面中使用这个快捷键快速创建注释
+
+ctrl+alt+M:将一个整体抽为一个方法
+
+ctrl+alt+P:将选中的部分抽为当前方法的参数
 ##git基本命令
 
-git status
+git statusgit 
 
 git add .
 

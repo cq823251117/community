@@ -8,6 +8,7 @@ import com.example.community.enums.CommentTypeEnum;
 import com.example.community.exception.CustomizeErrorCode;
 import com.example.community.mapper.CommentMapper;
 import com.example.community.model.Comment;
+import com.example.community.model.Notification;
 import com.example.community.model.User;
 import com.example.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
@@ -46,7 +47,7 @@ public class CommentController {
         comment.setGmtModified(System.currentTimeMillis());
         comment.setCommentator(user.getId());
         comment.setLikeCount(0L);
-        commentService.insert(comment);
+        commentService.insert(comment,user);
         return ResultDTO.okOf();
     }
 

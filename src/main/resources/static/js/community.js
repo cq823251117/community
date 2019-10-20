@@ -19,7 +19,7 @@ function comment2target(targetId, type, content) {
 
     $.ajax({
         type: "POST",
-        url: "/comment",
+        url: "/comment",//前面加个/的意识是：直接请求根路径的comment，而不是相对于当前路劲下的comment
         contentType: 'application/json',
         data: JSON.stringify({
             "parentId": targetId,
