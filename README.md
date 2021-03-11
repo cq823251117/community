@@ -53,9 +53,15 @@ ctrl+/:在html页面中使用这个快捷键快速创建注释
 ctrl+alt+M:将一个整体抽为一个方法
 
 ctrl+alt+P:将选中的部分抽为当前方法的参数
+
+ctrl+alt+f7:查看枚举在哪些地方使用了
+
+ctrl+alt+b:查看方法的实现
 ##git基本命令
 
-git statusgit 
+git clone (项目的http地址)
+
+git status
 
 git add .
 
