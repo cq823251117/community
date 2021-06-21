@@ -57,6 +57,10 @@ ctrl+alt+P:将选中的部分抽为当前方法的参数
 ctrl+alt+f7:查看枚举在哪些地方使用了
 
 ctrl+alt+b:查看方法的实现
+
+##debug
+f8：下一行
+alt+f9:到下一个断点
 ##git基本命令
 
 git clone (项目的http地址)
