@@ -58,6 +58,8 @@ ctrl+alt+f7:查看枚举在哪些地方使用了
 
 ctrl+alt+b:查看方法的实现
 
+ctrl+b:查看方法的调用
+
 ##debug
 f8：下一行
 alt+f9:到下一个断点
